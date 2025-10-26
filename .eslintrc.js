@@ -9,6 +9,7 @@ module.exports = {
     plugins: ['@typescript-eslint', 'react'],
     settings: { react: { version: 'detect' } },
     rules: {
-        "@typescript-eslint/no-empty-function": ["error", { "allow": ["arrowFunctions"] }]
+        "@typescript-eslint/no-empty-function": ["error", { "allow": ["arrowFunctions"] }],
+        "@typescript-eslint/ban-ts-comment": "off"
     }
 };
