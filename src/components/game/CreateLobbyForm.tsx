@@ -15,7 +15,7 @@ export const CreateLobbyForm: React.FC<CreateLobbyFormProps> = ({
     const [formData, setFormData] = useState({
         roomName: '',
         boidGroups: 4,
-        boidsPerGroup: 25,
+        boidsPerGroup: 2,
         maxPlayers: 4
     });
 
@@ -121,11 +121,10 @@ export const CreateLobbyForm: React.FC<CreateLobbyFormProps> = ({
                             border: '1px solid #ccc'
                         }}
                     >
+                        <option value={2}>2 boids</option>
+                        <option value={3}>3 boids</option>
+                        <option value={4}>4 boids</option>
                         <option value={10}>10 boids</option>
-                        <option value={15}>15 boids</option>
-                        <option value={20}>20 boids</option>
-                        <option value={25}>25 boids</option>
-                        <option value={30}>30 boids</option>
                     </select>
                 </div>
 
