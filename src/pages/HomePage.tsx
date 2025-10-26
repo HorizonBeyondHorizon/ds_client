@@ -5,10 +5,7 @@ import {CreateLobbyRequest, JoinLobbyRequest} from "../shared/types";
 import {Lobby} from "../components/game/lobby/Lobby";
 import {useNavigate} from "react-router-dom";
 
-//TODO: upd to envs
-const WS_URL = process.env.NODE_ENV === 'production'
-    ? `wss://${window.location.host}`
-    : 'ws://localhost:3001/api/ds_socket';
+const WS_URL = process.env.REACT_APP_GAME_WS_URL ? process.env.REACT_APP_GAME_WS_URL : 'ws://localhost:3001/api/ds_socket';
 
 export const HomePage: React.FC = () => {
     const {

@@ -5,10 +5,7 @@ import {useLobbyStore} from "../features/sort_game/hooks/useLobbyStore";
 import {GameCanvas} from "../components/game/GameCanvas";
 import { Lobby as GameLobby } from "../components/game/lobby/Lobby";
 
-//TODO: upd to envs
-const WS_URL = process.env.NODE_ENV === 'production'
-    ? `wss://${window.location.host}`
-    : 'ws://localhost:3001/api/ds_socket';
+const WS_URL = process.env.REACT_APP_GAME_WS_URL ? process.env.REACT_APP_GAME_WS_URL : 'ws://localhost:3001/api/ds_socket';
 
 export const GameRoomPage: React.FC = () => {
     const { roomId } = useParams<{ roomId: string }>();
@@ -39,7 +36,6 @@ export const GameRoomPage: React.FC = () => {
     };
 
     // const showLobby = !gameState?.gameStarted || !isConnected;
-    console.log(gameState)
     const showLobby = false;
 
     return (
