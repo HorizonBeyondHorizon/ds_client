@@ -48,7 +48,7 @@ export const MainView: React.FC<MainViewProps> = ({
                     fontSize: '14px',
                     marginBottom: '20px'
                 }}>
-                    {isConnected ? 'Connected' : 'Disconnected'}
+                    {isConnected ? 'Connected' : 'No connection to server'}
                 </div>
             </div>
 
@@ -64,14 +64,15 @@ export const MainView: React.FC<MainViewProps> = ({
                             onClick={() => setViewMode('create')}
                             style={{
                                 padding: '20px',
-                                backgroundColor: '#4CAF50',
+                                backgroundColor: isConnected ? '#4CAF50' : "#e0e0e0",
                                 color: 'white',
                                 border: 'none',
                                 borderRadius: '10px',
                                 cursor: 'pointer',
                                 fontSize: '18px',
-                                fontWeight: 'bold'
+                                fontWeight: 'bold',
                             }}
+                            {...(!isConnected && {disabled: true})}
                         >
                             Create Lobby
                         </button>
@@ -80,7 +81,7 @@ export const MainView: React.FC<MainViewProps> = ({
                             onClick={() => setViewMode('join')}
                             style={{
                                 padding: '20px',
-                                backgroundColor: '#2196F3',
+                                backgroundColor: isConnected ? '#2196F3' : "#e0e0e0",
                                 color: 'white',
                                 border: 'none',
                                 borderRadius: '10px',
@@ -88,6 +89,7 @@ export const MainView: React.FC<MainViewProps> = ({
                                 fontSize: '18px',
                                 fontWeight: 'bold'
                             }}
+                            {...(!isConnected && {disabled: true})}
                         >
                             Join Lobby
                         </button>
